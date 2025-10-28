@@ -115,3 +115,36 @@ flight-departures-board/
 - **Responsive layout** supporting major browsers (Chrome, Firefox, Safari, Edge)  
 - **Optimistic UI updates** when statuses are changed  
 - **Clean, modular codebase** structured for easy upgrade to Vue 3
+
+## 🧭 Future Enhancements
+
+While the current implementation meets the core requirements, there are several opportunities to enhance the user experience and scalability of the Departures Board:
+
+- **Pagination:**  
+  Implement pagination or infinite scrolling to handle larger datasets efficiently.  
+  This would prevent performance degradation and improve load times when the API returns many flights.
+
+- **Sortable Columns:**  
+  Allow users to click on column headers (e.g. *Departure Time*, *Airline*, *Status*) to dynamically sort flights.  
+  This would make it easier to organize information based on user preferences.
+
+- **Search & Filtering:** 
+  Enable filtering by city, airline, or flight status. 
+
+- **Auto-refresh:**
+  Periodically fetch updated flight data to reflect real-time changes. 
+
+- **Animations:**
+  Add subtle transition effects when rows update or reload.
+
+- **Editable Form via Modal or Sidebar:**  
+  Improve visibility and usability of the flight status update form.  
+  Instead of showing the form inline, introduce an **Edit** button that opens a modal or expandable sidebar containing the form.  
+  This would make it clearer when and where users can make updates.
+
+- **Role-Based Access Control:**  
+  Restrict access to the update form based on user roles.  
+  For example, only users with an **Admin** role would have permission to view and edit flight statuses, while others would remain in read-only mode.
+
+
+These enhancements would improve both usability and performance, aligning the app more closely with real-world flight board behavior.
