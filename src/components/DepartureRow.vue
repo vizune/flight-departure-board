@@ -1,11 +1,28 @@
 <template>
-  <div class="grid grid-cols-11 gap-4 items-center border border-1 border-gray-200 rounded-lg px-8 py-4 hover:bg-gray-800 transition font-semibold">
-    <div class="text-gray-100 col-span-2">{{ time }}</div>
-    <div class="text-yellow-400 col-span-3">{{ location }}</div>
-    <div class="text-gray-200">{{ code }}</div>
-    <div class="text-gray-200 col-span-2">{{ airline }}</div>
-    <div class="text-yellow-400 text-center">{{ gate }}</div>
-    <div class="text-yellow-400 col-span-2">{{ status }}</div>
+  <div class="md:grid grid-cols-11 gap-6 md:gap items-center border border-1 border-gray-200 rounded-lg px-8 py-4 hover:bg-gray-800 transition font-semibold text-gray-100 relative">
+    <div class="col-span-2">
+      <span class="md:hidden text-yellow-400">Departure time: </span>
+      {{ time }}
+    </div>
+    <div class="md:text-yellow-400 col-span-3">
+      <span class="md:hidden text-yellow-400">To: </span>
+      {{ location }}
+    </div>
+    <div class="">
+      <span class="md:hidden text-yellow-400">Code: </span>
+      {{ code }}
+    </div>
+    <div class="col-span-2">
+      <span class="md:hidden text-yellow-400">Airline: </span>
+      {{ airline }}
+    </div>
+    <div class="md:text-yellow-400 md:text-center">
+      <span class="md:hidden text-yellow-400">Gate: </span>
+      {{ gate }}
+    </div>
+    <div class="md:text-yellow-400 col-span-2 absolute top-2 right-2 md:static">
+      {{ status }}
+    </div>
   </div>
 </template>
 
