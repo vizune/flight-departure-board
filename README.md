@@ -62,20 +62,26 @@ npm run test
 
 ## 🧩 Project Structure
 
+```bash
 flight-departures-board/
 ├─ src/
 │  ├─ api/                # Axios API layer
 │  ├─ components/         # Vue components (Board, Row, Form, etc.)
 │  ├─ store/              # Vuex store for flights and overrides
-│  ├─ styles/             # Global styles and variables
+│  ├─ styles/             # Global styles and Tailwind entry point
+│  │  ├─ global.scss      # Imports Tailwind directives + global styles
+│  │  └─ tailwind.css     # (optional) Separate Tailwind import file if needed
 │  ├─ utils/              # Helper functions (sorting, formatting)
 │  ├─ App.vue             # Root component
 │  └─ main.js             # App entry point
-├─ public/
+├─ public/                # Static assets (favicon, etc.)
+├─ tailwind.config.js     # Tailwind configuration (content paths, theme)
+├─ postcss.config.js      # PostCSS configuration (Tailwind + Autoprefixer)
 ├─ vite.config.js         # Vite configuration
 ├─ package.json
 ├─ .gitignore
 └─ README.md
+```
 
 ---
 
