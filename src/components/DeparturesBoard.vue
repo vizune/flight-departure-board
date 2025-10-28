@@ -39,7 +39,7 @@ import { getFlights } from '../api/flights'
 
 export default {
   name: 'DeparturesBoard',
-  components: { DepartureRow },
+  components: { DepartureRow, SkeletonRows, ErrorBanner },
   data() {
     return {
         flights: [],
