@@ -1,7 +1,7 @@
 <template>
-  <div class="grid grid-cols-10 gap-4 items-center border border-1 border-gray-200 rounded-lg px-8 py-4 hover:bg-gray-800 transition font-semibold">
+  <div class="grid grid-cols-11 gap-4 items-center border border-1 border-gray-200 rounded-lg px-8 py-4 hover:bg-gray-800 transition font-semibold">
     <div class="text-gray-100 col-span-2">{{ time }}</div>
-    <div class="text-yellow-400 col-span-2">{{ city }}</div>
+    <div class="text-yellow-400 col-span-3">{{ location }}</div>
     <div class="text-gray-200">{{ code }}</div>
     <div class="text-gray-200 col-span-2">{{ airline }}</div>
     <div class="text-yellow-400 text-center">{{ gate }}</div>
@@ -22,8 +22,8 @@ export default {
       const d = dayjs(this.flight?.scheduledTime)
       return d.isValid() ? d.format('HH.mm') : '—'
     },
-    city() {
-      return this.flight?.arrivalAirport?.cityName
+    location() {
+      return `${this.flight?.arrivalAirport?.cityName}, ${this.flight?.arrivalAirport.countryName}`
     },
     code() {
       return this.flight?.arrivalAirport?.code || '—'

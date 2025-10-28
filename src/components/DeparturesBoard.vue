@@ -8,10 +8,10 @@
     </header>
 
     <div class="bg-gradient-to-r from-neutral-600 via-neutral-800 to-neutral-900 w-full max-w-5xl shadow-lg my-3 py-3 px-8">
-      <div class="grid grid-cols-10 gap-4 text-black font-semibold text-sm bg-gradient-to-r from-blue-50 via-blue-200 to-blue-300 rounded-lg px-8 py-2 shadow-sm"
+      <div class="grid grid-cols-11 gap-4 text-black font-semibold text-sm bg-gradient-to-r from-blue-50 via-blue-200 to-blue-300 rounded-lg px-8 py-2 shadow-sm"
       >
             <div class="col-span-2">Departure time</div>
-            <div class="col-span-2">City Name</div>
+            <div class="col-span-3">To</div>
             <div>Code</div>
             <div class="col-span-2">Airline</div>
             <div class="text-center">Gate</div>
