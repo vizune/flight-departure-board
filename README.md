@@ -1,12 +1,13 @@
 # ✈️ Flight Departures Board
 
-A single-page Vue 2 application built with **Vite** that displays flight departure data from a public API and allows updating each flight’s status.
+A single-page Vue 2 application built with **Vite** that displays flight departure data from a public API and allows updating each flight's status.
 
 ---
 
 ## 🚀 Overview
 
-This project was created as part of a technical test to demonstrate proficiency with **Vue 2**, modern frontend tooling, responsive design, and clean code organization.  
+This project was created as part of a technical test to demonstrate proficiency with **Vue 2**, modern frontend tooling, responsive design, and clean code organization. 
+
 The app fetches real-time flight data and lets users update a flight’s status (e.g., *Departed*, *Delayed*, *Diverted*, *Cancelled*, or custom free text*).
 
 ---
@@ -56,3 +57,54 @@ npm run preview
 ```bash
 npm run test
 ```
+
+---
+
+## 🧩 Project Structure
+
+flight-departures-board/
+├─ src/
+│  ├─ api/                # Axios API layer
+│  ├─ components/         # Vue components (Board, Row, Form, etc.)
+│  ├─ store/              # Vuex store for flights and overrides
+│  ├─ styles/             # Global styles and variables
+│  ├─ utils/              # Helper functions (sorting, formatting)
+│  ├─ App.vue             # Root component
+│  └─ main.js             # App entry point
+├─ public/
+├─ vite.config.js         # Vite configuration
+├─ package.json
+├─ .gitignore
+└─ README.md
+
+---
+
+## 🌐 API Reference
+
+**Endpoint:**  
+`https://6315ae3e5b85ba9b11e4cb85.mockapi.io/departures/Flightdata`
+
+**Example Response:**
+```json
+[
+  {
+    "id": "1",
+    "flightNumber": "BA284",
+    "departureAirport": { "airportName": "Heathrow" },
+    "arrivalAirport": { "airportName": "JFK", "countryName": "USA" },
+    "scheduledTime": "2025-10-28T12:30:00Z",
+    "status": "On time"
+  }
+]
+
+---
+
+## 🧠 Features
+
+- **Fetches live flight data** from the public API  
+- **Displays departures** in a responsive, accessible table  
+- **Allows updating flight status** via a form (with free text option)  
+- **Handles API errors gracefully** with a retry option  
+- **Responsive layout** supporting major browsers (Chrome, Firefox, Safari, Edge)  
+- **Optimistic UI updates** when statuses are changed  
+- **Clean, modular codebase** structured for easy upgrade to Vue 3
