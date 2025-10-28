@@ -22,7 +22,6 @@
   "homepage": "https://github.com/vizune/flight-departure-board#readme",
   "dependencies": {
     "@vitejs/plugin-vue2": "^2.3.4",
-    "axios": "^1.13.0",
     "dayjs": "^1.11.18",
     "vite": "^7.1.12",
     "vue": "^2.7.16",

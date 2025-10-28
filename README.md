@@ -19,9 +19,9 @@ The app fetches real-time flight data and lets users update a flight’s status 
 | Framework | **Vue 2** | Required by the brief; stable and widely supported |
 | Bundler | **Vite** + `@vitejs/plugin-vue2` | Modern, fast dev server compatible with Vue 2 |
 | State Management | **Vuex 3** | Simple reactive store; easily upgradable to Pinia/Vue 3 |
-| HTTP Client | **Axios** | Clean and familiar API for data fetching |
+| HTTP Client | **Fetch API** | Native browser API — lightweight, no external dependency, and fully supported in modern environments |
 | Date Formatting | **dayjs** | Lightweight replacement for moment.js |
-| Styling | **Sass (SCSS)** | Allows variables and nesting for responsive layouts |
+| Styling | **SCSS** | Allows variables and nesting for responsive layouts |
 | Testing | **Jest** + `@vue/test-utils` | Unit testing for components and store |
 
 ---
@@ -65,7 +65,7 @@ npm run test
 ```bash
 flight-departures-board/
 ├─ src/
-│  ├─ api/                # Axios API layer
+│  ├─ api/                # Fetch API layer
 │  ├─ components/         # Vue components (Board, Row, Form, etc.)
 │  ├─ store/              # Vuex store for flights and overrides
 │  ├─ styles/             # Global styles and Tailwind entry point
