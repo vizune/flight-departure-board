@@ -1,13 +1,16 @@
 <template>
-  <div id="app">
-    <h1 class="text-center">Flight Departures Board</h1>
+  <div id="app" class="min-h-screen flex flex-col items-center py-10">
+    <DeparturesBoard />
   </div>
 </template>
 
 <script>
-export default { name: 'App' }
+import DeparturesBoard from './components/DeparturesBoard.vue'
+
+export default {
+  name: 'App',
+  components: {
+    DeparturesBoard,
+  },
+}
 </script>
-
-<style scoped>
-
-</style>
