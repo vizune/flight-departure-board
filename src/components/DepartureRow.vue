@@ -21,7 +21,7 @@
       {{ gate }}
     </div>
     <div class="md:text-yellow-400 col-span-2 absolute top-2 right-2 md:static">
-      {{ status }}
+      <StatusBadge :label="status"></StatusBadge>
     </div>
   </div>
 </template>
@@ -40,7 +40,7 @@ export default {
       return d.isValid() ? d.format('HH.mm') : '—'
     },
     location() {
-      return `${this.flight?.arrivalAirport?.cityName}, ${this.flight?.arrivalAirport.countryName}`
+      return `${this.flight?.arrivalAirport?.cityName}, ${this.flight?.arrivalAirport.countryName}` || '—'
     },
     code() {
       return this.flight?.arrivalAirport?.code || '—'
