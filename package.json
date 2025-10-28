@@ -1,0 +1,40 @@
+{
+  "name": "flight-departure-board",
+  "version": "1.0.0",
+  "description": "Single page app built in Vue displaying a flight departure board",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vizune/flight-departure-board.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vizune/flight-departure-board/issues"
+  },
+  "homepage": "https://github.com/vizune/flight-departure-board#readme",
+  "dependencies": {
+    "@vitejs/plugin-vue2": "^2.3.4",
+    "axios": "^1.13.0",
+    "dayjs": "^1.11.18",
+    "vite": "^7.1.12",
+    "vue": "^2.7.16",
+    "vue-router": "^3.6.5",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@testing-library/vue": "^5.9.0",
+    "@vue/test-utils": "^1.3.6",
+    "babel-jest": "^30.2.0",
+    "jest": "^30.2.0",
+    "sass": "^1.93.2",
+    "vue-jest": "^3.0.7"
+  }
+}
