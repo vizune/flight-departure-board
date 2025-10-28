@@ -96,6 +96,7 @@ flight-departures-board/
     "status": "On time"
   }
 ]
+```
 
 ---
 
