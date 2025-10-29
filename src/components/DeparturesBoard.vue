@@ -23,6 +23,7 @@
 
         <div v-else class="mt-3 flex flex-col gap-5">
           <DepartureRow v-for="(flight, i) in flightsSorted" :key="flight.id || i" :flight="flight" />
+          <StatusUpdateForm :flights="flights" />
         </div>
       </div>
   </div>
@@ -34,11 +35,12 @@ import dayjs from 'dayjs'
 import DepartureRow from './DepartureRow.vue'
 import ErrorBanner from './ErrorBanner.vue'
 import SkeletonRows from './SkeletonRows.vue'
+import StatusUpdateForm from './StatusUpdateForm.vue'
 import { getFlights } from '../api/flights'
 
 export default {
   name: 'DeparturesBoard',
-  components: { DepartureRow, SkeletonRows, ErrorBanner },
+  components: { DepartureRow, SkeletonRows, ErrorBanner, StatusUpdateForm },
   data() {
     return {
         flights: [],
