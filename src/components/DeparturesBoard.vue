@@ -62,7 +62,15 @@ export default {
     },
   },
   mounted() {
-    this.load()
+    // On mount, first attempt to restore saved flight data from localStorage.
+    // If saved data exists, use it to populate the board immediately (preserving user updates).
+    // Otherwise, fall back to fetching fresh data from the API.
+    const saved = JSON.parse(localStorage.getItem('flights'))
+    if (saved?.length) {
+      this.flights = saved
+    } else {
+      this.load()
+    }
   },
   methods: {
     async load() {
@@ -104,6 +112,7 @@ export default {
       this.flights = this.flights.map(f =>
         f.id === flightId ? { ...f, status } : f
       )
+      localStorage.setItem('flights', JSON.stringify(this.flights))
     }
   }
 }
