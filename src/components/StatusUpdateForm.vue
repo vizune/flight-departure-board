@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="onSubmit" class="w-full max-w-5xl mt-6 bg-neutral-900/70 border border-neutral-700 rounded-lg p-6 space-y-4">
+  <form @submit.prevent="onSubmit" class="w-full max-w-5xl my-6 bg-neutral-900/70 border border-neutral-700 rounded-lg p-6 space-y-4">
     <div class="flex items-center text-white">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="36px" height="36px" fill="white" class="mr-2">
             <!-- !Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc. -->
@@ -63,8 +63,7 @@
     <div class="flex items-center gap-3">
       <button
         type="submit"
-        class="px-4 py-2 rounded-md bg-amber-400 text-black font-semibold hover:bg-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500 disabled:opacity-60 disabled:bg-gray-300"
-        :disabled="!canSubmit"
+        class="px-4 py-2 rounded-md bg-amber-400 text-black font-semibold hover:bg-amber-300 focus:outline-none focus:ring-2 focus:ring-amber-500"
       >
         Update status
       </button>
@@ -141,6 +140,7 @@ export default {
       })
 
       this.success = true
+      this.resetForm();
     }
   }
 }

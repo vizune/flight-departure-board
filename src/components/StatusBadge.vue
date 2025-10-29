@@ -47,7 +47,7 @@ export default {
       if (status.includes('cancelled')) {
         return 'border-red-700 text-gray-700 font-semibold'
       }
-      if (status.includes('departing at')) {
+      if (status.includes('departing at') || status.includes('diverted')) {
         return 'border-purple-900 text-gray-700'
       }
 

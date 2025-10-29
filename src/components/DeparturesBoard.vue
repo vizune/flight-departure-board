@@ -23,7 +23,7 @@
 
         <div v-else class="mt-3 flex flex-col gap-5">
           <DepartureRow v-for="(flight, i) in flightsSorted" :key="flight.id || i" :flight="flight" />
-          <StatusUpdateForm :flights="flights" />
+          <StatusUpdateForm :flights="flights" @update="applyLocalUpdate" />
         </div>
       </div>
   </div>
@@ -96,6 +96,14 @@ export default {
       } finally {
         this.loading = false
       }
+    },
+    applyLocalUpdate({ flightId, status }) {
+      // Updates the local flights array when a status change is submitted.
+      // It finds the flight with the matching `flightId` and returns a new array
+      // where only that flight's `status` is updated, preserving immutability.
+      this.flights = this.flights.map(f =>
+        f.id === flightId ? { ...f, status } : f
+      )
     }
   }
 }

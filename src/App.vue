@@ -10,7 +10,7 @@ import DeparturesBoard from './components/DeparturesBoard.vue'
 export default {
   name: 'App',
   components: {
-    DeparturesBoard,
-  },
+    DeparturesBoard
+  }
 }
 </script>
