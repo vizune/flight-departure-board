@@ -1,35 +1,54 @@
 <template>
-  <div class="container flex flex-col items-center">
+  <section class="container flex flex-col items-center">
     <BoardHeader title="Departures" />
 
     <div
       class="bg-gradient-to-r from-neutral-600 via-neutral-800 to-neutral-900 w-full max-w-5xl shadow-lg my-3 py-3 px-8"
     >
-      <div
-        class="hidden md:grid grid-cols-11 gap-4 text-black font-semibold text-sm bg-gradient-to-r from-blue-50 via-blue-200 to-blue-300 rounded-lg px-8 py-2 shadow-sm hidden"
-      >
-        <div class="col-span-2">Departure time</div>
-        <div class="col-span-3">To</div>
-        <div>Code</div>
-        <div class="col-span-2">Airline</div>
-        <div class="text-center">Gate</div>
-        <div class="col-span-2">Status</div>
-      </div>
-
       <ErrorBanner v-if="error" :error="error" @retry="load" />
 
       <SkeletonRows v-else-if="loading" />
 
-      <div v-else class="mt-3 flex flex-col gap-5">
-        <DepartureRow
-          v-for="(flight, i) in flightsSorted"
-          :key="flight.id || i"
-          :flight="flight"
-        />
+      <div v-else>
+        <table
+          class="w-full text-left border-separate"
+          role="table"
+          aria-label="Departures"
+        >
+          <colgroup>
+            <col class="w-0" />
+            <col class="lg:w-[10.5rem]" />
+            <col class="lg:w-[16rem]" />
+            <col class="lg:w-[8rem]" />
+            <col class="lg:w-[12rem]" />
+            <col class="lg:w-[6rem]" />
+            <col class="lg:w-[13rem]" />
+          </colgroup>
+          <thead
+            class="hidden lg:table-header-group relative text-black text-sm font-semibold"
+          >
+            <tr>
+              <th scope="col" class=""></th>
+              <th scope="col" class="pl-4 pb-2">Departure time</th>
+              <th scope="col" class="px-4 pb-2">To</th>
+              <th scope="col" class="px-4 pb-2">Code</th>
+              <th scope="col" class="px-4 pb-2">Airline</th>
+              <th scope="col" class="px-4 pb-2 text-center">Gate</th>
+              <th scope="col" class="px-4 pb-2">Status</th>
+            </tr>
+          </thead>
+          <tbody class="flex flex-col gap-4 lg:table-row-group">
+            <DepartureRow
+              v-for="(flight, i) in flightsSorted"
+              :key="flight.id || i"
+              :flight="flight"
+            />
+          </tbody>
+        </table>
         <StatusUpdateForm :flights="flights" @update="applyLocalUpdate" />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -114,3 +133,24 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+table {
+  border-spacing: 0 0.5rem;
+}
+
+thead {
+  position: relative;
+  z-index: 1;
+}
+
+thead::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to right, #eff6ff, #bfdbfe, #93c5fd);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+</style>

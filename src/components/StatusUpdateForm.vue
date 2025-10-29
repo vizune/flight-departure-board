@@ -20,7 +20,7 @@
       <h2 class="text-xl font-semibold">Update Flight Status</h2>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-4">
+    <div class="grid lg:grid-cols-2 gap-4">
       <div>
         <label
           for="flight"

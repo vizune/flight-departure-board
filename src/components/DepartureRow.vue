@@ -1,31 +1,41 @@
 <template>
-  <div
-    class="md:grid grid-cols-11 gap-6 md:gap items-center border border-1 border-gray-200 rounded-lg px-8 py-4 hover:bg-gray-800 transition font-semibold text-gray-100 relative"
+  <tr
+    class="relative flex flex-col relative lg:table-row transition font-semibold text-gray-100"
   >
-    <div class="col-span-2">
-      <span class="md:hidden text-yellow-400">Departure time: </span>
+    <td class="flex lg:table-cell px-4 py-3">
+      <span class="block lg:hidden text-yellow-400 font-normal mr-1"
+        >Departure time:</span
+      >
       {{ time }}
-    </div>
-    <div class="md:text-yellow-400 col-span-3">
-      <span class="md:hidden text-yellow-400">To: </span>
+    </td>
+    <td class="flex lg:table-cell px-4 py-3 lg:text-yellow-400">
+      <span class="block lg:hidden text-yellow-400 font-normal mr-1">To:</span>
       {{ location }}
-    </div>
-    <div class="">
-      <span class="md:hidden text-yellow-400">Code: </span>
+    </td>
+    <td class="flex lg:table-cell px-4 py-3">
+      <span class="block lg:hidden text-yellow-400 font-normal mr-1"
+        >Code:</span
+      >
       {{ code }}
-    </div>
-    <div class="col-span-2">
-      <span class="md:hidden text-yellow-400">Airline: </span>
+    </td>
+    <td class="flex lg:table-cell px-4 py-3">
+      <span class="block lg:hidden text-yellow-400 font-normal mr-1"
+        >Airline:</span
+      >
       {{ airline }}
-    </div>
-    <div class="md:text-yellow-400 md:text-center">
-      <span class="md:hidden text-yellow-400">Gate: </span>
+    </td>
+    <td class="flex lg:table-cell px-4 py-3 lg:text-center lg:text-yellow-400">
+      <span class="block lg:hidden text-yellow-400 font-normal mr-1"
+        >Gate:</span
+      >
       {{ gate }}
-    </div>
-    <div class="md:text-yellow-400 col-span-2 absolute top-2 right-2 md:static">
-      <StatusBadge :label="status"></StatusBadge>
-    </div>
-  </div>
+    </td>
+    <td
+      class="px-4 py-1 lg:py-3 text-center lg:text-yellow-400 absolute top-0 right-0 lg:static"
+    >
+      <StatusBadge :label="status" />
+    </td>
+  </tr>
 </template>
 
 <script>
@@ -42,10 +52,9 @@ export default {
       return d.isValid() ? d.format("HH.mm") : "—";
     },
     location() {
-      return (
-        `${this.flight?.arrivalAirport?.cityName}, ${this.flight?.arrivalAirport.countryName}` ||
-        "—"
-      );
+      const city = this.flight?.arrivalAirport?.cityName;
+      const country = this.flight?.arrivalAirport?.countryName;
+      return city && country ? `${city}, ${country}` : city || "—";
     },
     code() {
       return this.flight?.arrivalAirport?.code || "—";
@@ -62,3 +71,24 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+tr::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  border-radius: 0.75rem;
+  pointer-events: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.25s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+tr:hover::before {
+  border-color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+</style>
