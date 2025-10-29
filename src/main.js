@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import App from './App.vue'
-import './styles/global.scss'
+import Vue from "vue";
+import App from "./App.vue";
+import "./styles/global.scss";
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount("#app");

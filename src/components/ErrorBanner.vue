@@ -16,12 +16,13 @@
 
 <script>
 export default {
-  name: 'ErrorBanner',
+  name: "ErrorBanner",
   props: {
     error: {
       type: String,
       required: true,
     },
   },
-}
+  emits: ["retry"],
+};
 </script>

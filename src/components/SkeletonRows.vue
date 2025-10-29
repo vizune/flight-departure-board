@@ -10,12 +10,12 @@
 
 <script>
 export default {
-  name: 'SkeletonRows',
+  name: "SkeletonRows",
   props: {
     count: {
       type: Number,
-      default: 6
-    }
-  }
-}
+      default: 6,
+    },
+  },
+};
 </script>

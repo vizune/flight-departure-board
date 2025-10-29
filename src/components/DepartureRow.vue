@@ -1,5 +1,7 @@
 <template>
-  <div class="md:grid grid-cols-11 gap-6 md:gap items-center border border-1 border-gray-200 rounded-lg px-8 py-4 hover:bg-gray-800 transition font-semibold text-gray-100 relative">
+  <div
+    class="md:grid grid-cols-11 gap-6 md:gap items-center border border-1 border-gray-200 rounded-lg px-8 py-4 hover:bg-gray-800 transition font-semibold text-gray-100 relative"
+  >
     <div class="col-span-2">
       <span class="md:hidden text-yellow-400">Departure time: </span>
       {{ time }}
@@ -27,33 +29,36 @@
 </template>
 
 <script>
-import dayjs from 'dayjs'
-import StatusBadge from './StatusBadge.vue'
+import dayjs from "dayjs";
+import StatusBadge from "./StatusBadge.vue";
 
 export default {
-  name: 'DepartureRow',
+  name: "DepartureRow",
   components: { StatusBadge },
   props: { flight: { type: Object, required: true } },
   computed: {
     time() {
-      const d = dayjs(this.flight?.scheduledTime)
-      return d.isValid() ? d.format('HH.mm') : '—'
+      const d = dayjs(this.flight?.scheduledTime);
+      return d.isValid() ? d.format("HH.mm") : "—";
     },
     location() {
-      return `${this.flight?.arrivalAirport?.cityName}, ${this.flight?.arrivalAirport.countryName}` || '—'
+      return (
+        `${this.flight?.arrivalAirport?.cityName}, ${this.flight?.arrivalAirport.countryName}` ||
+        "—"
+      );
     },
     code() {
-      return this.flight?.arrivalAirport?.code || '—'
+      return this.flight?.arrivalAirport?.code || "—";
     },
     airline() {
-      return this.flight?.airline || '—'
+      return this.flight?.airline || "—";
     },
     gate() {
-      return this.flight?.gate || '—'
+      return this.flight?.gate || "—";
     },
     status() {
-      return this.flight?.status || 'On time'
+      return this.flight?.status || "On time";
     },
   },
-}
+};
 </script>

@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import DeparturesBoard from './components/DeparturesBoard.vue'
+import DeparturesBoard from "./components/DeparturesBoard.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    DeparturesBoard
-  }
-}
+    DeparturesBoard,
+  },
+};
 </script>
