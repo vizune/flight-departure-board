@@ -89,6 +89,5 @@ tr::before {
 tr:hover::before {
   border-color: rgba(255, 255, 255, 0.9);
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 </style>

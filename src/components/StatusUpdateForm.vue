@@ -78,9 +78,9 @@
         placeholder="e.g. Gate opens 07.00 / Go to gate 14 / Final call"
         class="w-full rounded-md bg-neutral-800 text-white border border-neutral-600 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-sky-500"
         :required="form.statusType === 'FreeText'"
-        maxlength="80"
+        maxlength="50"
       />
-      <p class="text-xs text-gray-400 mt-1">{{ form.freeText.length }}/80</p>
+      <p class="text-xs text-gray-400 mt-1">{{ form.freeText.length }}/50</p>
     </div>
 
     <div class="flex items-center gap-3">
@@ -173,7 +173,6 @@ export default {
       });
 
       this.success = true;
-      this.resetForm();
     },
   },
 };

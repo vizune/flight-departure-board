@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
-import { getFlights } from "../flights";
+import { getFlights } from "./flights";
 
 describe("getFlights", () => {
   beforeEach(() => {
