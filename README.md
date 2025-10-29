@@ -120,6 +120,10 @@ flight-departures-board/
 
 While the current implementation meets the core requirements, there are several opportunities to enhance the user experience and scalability of the Departures Board:
 
+- **Centralized State Management with Vuex or Pinia:**  
+  Implement a global store to manage flight data and status updates across components.  
+  This would replace local state handling and ensure consistency, scalability, and easier synchronization between the Departures board, update form, and other potential views.
+
 - **Pagination:**  
   Implement pagination or infinite scrolling to handle larger datasets efficiently.  
   This would prevent performance degradation and improve load times when the API returns many flights.
